@@ -7,7 +7,8 @@ public class RegexRegistration {
 	String userFirstName = "^[A-Z][a-zA-Z]{3,}";
 	String userLastName = "^[A-Z][a-zA-Z]{3,}";
 	String userEmail = "^[A-Za-z0-9_-]+([.][A-Za-z0-9_-]+)@[A-Za-z]+[A-Za-z]+([.][A-Za-z]+)$";
-	String userMobileNumber = "^[0-9]{2}(\\s){1}[0-9]{10}$";
+	String userMobileNumber = "^[0-9]{2}[\\s][0-9]{10}";
+	String userPassword = "^[A-Z0-9a-z]{8,}";
 
 	public void validateFirstName(String firstName) {
 		Pattern pattern = Pattern.compile(userFirstName);
@@ -30,6 +31,12 @@ public class RegexRegistration {
 	public void validateMobileNumber(String mobileNumber) {
 		Pattern pattern = Pattern.compile(userMobileNumber);
 		Matcher matcher = pattern.matcher(mobileNumber);
+		System.out.println(matcher.matches());
+	}
+
+	public void validatePassword(String password) {
+		Pattern pattern = Pattern.compile(userPassword);
+		Matcher matcher = pattern.matcher(password);
 		System.out.println(matcher.matches());
 	}
 }
