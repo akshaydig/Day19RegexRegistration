@@ -4,38 +4,40 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.bl.regex.RegexRegistration;
-import com.bl.regex.RegexRegistrationException;
+import com.bl.regex.UserValidation;
+import com.bl.regex.UserValidationException;
 
 public class TestClass {
 
-	RegexRegistration validation;
+	UserValidation validation; // Create Object Of Class
 
+	// Test First Name Is Valid or Invalid
 	@Test
-	public void testFirstNameHappy() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateFirstName("Suhas");
+	public void testFirstNameHappy() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateFirstName.validateFirstName("Suhas");
 		assertEquals(true, output);
 	}
 
 	@Test
-	public void testFirstNameSad() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateFirstName("suhas");
+	public void testFirstNameSad() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateFirstName.validateFirstName("suhas");
 		assertEquals(false, output);
 	}
 
+	// Test Last Name Is Valid or Invalid
 	@Test
-	public void testLastNameHappy() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateLastName("Bhor");
+	public void testLastNameHappy() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateLastName.validateLastName("Bhor");
 		assertEquals(true, output);
 	}
 
 	@Test
-	public void testLastNameSad() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateLastName("bhor");
+	public void testLastNameSad() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateLastName.validateLastName("bhor");
 		assertEquals(false, output);
 	}
 
@@ -56,45 +58,49 @@ public class TestClass {
 	 * = new RegexRegistration(); boolean output = validation.validateEmail(input);
 	 * assertEquals(expectedResult , output); }
 	 */
+
+	// Test Email Is Valid or Invalid
 	@Test
-	public void testEmailHappy() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateEmail("abc.xyz@bl.co.in");
+	public void testEmailHappy() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateEmail.validateEmail("abc.xyz@bl.co.in");
 		assertEquals(true, output);
 	}
 
 	@Test
-	public void testEmailSad() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateEmail(".abc@abc.com");
+	public void testEmailSad() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateEmail.validateEmail(".abc@abc.com");
 		assertEquals(false, output);
 	}
 
+	// Test Mobile Number Is Valid or Invalid
 	@Test
-	public void testMobileNumberHappy() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateMobileNumber("91 1234567890");
+	public void testMobileNumberHappy() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateMobileNumber.validateMobileNumber("91 1234567890");
 		assertEquals(true, output);
 	}
 
 	@Test
-	public void testMobileNumberSad() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validateMobileNumber("91 123456789");
+	public void testMobileNumberSad() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validateMobileNumber.validateMobileNumber("91 123456789");
 		assertEquals(false, output);
 	}
 
+	// Test Password Is Valid or Invalid
 	@Test
-	public void testPasswordHappy() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validatePassword("Abcde@123");
+	public void testPasswordHappy() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validatePassword.validatePassword("Abcde@123");
 		assertEquals(true, output);
 	}
 
 	@Test
-	public void testPasswordSad() throws RegexRegistrationException {
-		validation = new RegexRegistration();
-		boolean output = validation.validatePassword("Abc@123");
+	public void testPasswordSad() throws UserValidationException {
+		validation = new UserValidation();
+		boolean output = validation.validatePassword.validatePassword("Abc@123");
 		assertEquals(false, output);
 	}
 }
